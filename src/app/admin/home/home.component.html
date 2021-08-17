@@ -1,0 +1,59 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+      <!-- <div class="page__content-data position-absolute text-center"> -->
+        <div class="">
+
+        <!-- data -->
+        <div class="">
+          <a routerLink="/admin/createwebsite"  class="btn rounded-btn"><mat-icon>create</mat-icon></a>
+        </div>
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Price</th>
+                  <th>Content</th>
+                  <th>Date Submit</th>
+                  <th>Image</th>
+                  <th>Update</th>
+                  <th>View</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of vn">
+                  <td>{{item.name}}</td>
+                  <td>{{item.address}}</td>
+                  <td>{{item.price}}</td>
+                  <td><textarea name="" id="" cols="" rows="1">{{item.content}}</textarea></td>
+                  <td>{{item.dateSubmit}}</td>
+                  <td><img src="./../../../assets/images//{{this.item.image}}" alt="" width="15" height="25"></td>
+                  <td class="">
+                    <button  class="btn rounded-btn" (click)=UpdateBlog(item.id) >
+                      <mat-icon>
+                        update
+                      </mat-icon>
+                    </button>
+                  </td>
+                  <td>
+                    <button  class="btn rounded-btn" (click)=ViewBlog(item.id)>
+                      <mat-icon>
+                        visibility
+                      </mat-icon>
+                    </button>
+                  </td>
+                  <td>
+                      <button  class="btn rounded-btn" (click)=deleteBlog(item.id)>
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        <!-- /data -->
+
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,116 @@
+<div class="view">
+  <img src="../../../assets/images/thow_under-bridge-1024x635.jpg" class="img-fluid" alt="" width="100%">
+  <div class="mask flex-center rgba-blue-light">
+    <p class="white-text">strong overlay</p>
+  </div>
+</div>
+
+  <!-- <section class="services-section bg-light">
+    <div class="container d-flex ">
+      <div class="row mt-5 mb-5">
+        <div class="col-md-6 order-md-last heading-section pl-md-5">
+          <h2 class="mb-4">It's time to start your adventure</h2>
+          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+          A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+          <p><a href="#" class="btn btn-primary py-3 px-4">Search Destination</a></p>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6 d-flex align-self-stretch">
+              <div class="media block-6 services d-block">
+                <div class="icon"><span class="flaticon-paragliding"></span></div>
+                <div class="media-body">
+                  <h3 class="heading mb-3">Activities</h3>
+                  <p>A small river named Duden flows by their place and supplies it with the necessary</p>
+                </div>
+              </div>      
+            </div>
+            <div class="col-md-6 d-flex align-self-stretch">
+              <div class="media block-6 services d-block">
+                <div class="icon"><span class="flaticon-route"></span></div>
+                <div class="media-body">
+                  <h3 class="heading mb-3">Travel Arrangements</h3>
+                  <p>A small river named Duden flows by their place and supplies it with the necessary</p>
+                </div>
+              </div>    
+            </div>
+            <div class="col-md-6 d-flex align-self-stretch">
+              <div class="media block-6 services d-block">
+                <div class="icon"><span class="flaticon-tour-guide"></span></div>
+                <div class="media-body">
+                  <h3 class="heading mb-3">Private Guide</h3>
+                  <p>A small river named Duden flows by their place and supplies it with the necessary</p>
+                </div>
+              </div>      
+            </div>
+            <div class="col-md-6 d-flex align-self-stretch">
+              <div class="media block-6 services d-block">
+                <div class="icon"><span class="flaticon-map"></span></div>
+                <div class="media-body">
+                  <h3 class="heading mb-3">Location Manager</h3>
+                  <p>A small river named Duden flows by their place and supplies it with the necessary</p>
+                </div>
+              </div>      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="ftco-section ftco-no-pt mt-5">
+    <div class="container">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-12 heading-section text-center">
+          <h2 class="mb-4">Tour Destination</h2>
+        </div>
+      </div>
+      <div class="row">
+        <!--data-->
+        <div class="col-md-4"  *ngFor="let item of vn | paginate:{id: 'listing',
+        itemsPerPage:6,
+        currentPage: page,
+        totalItems:totalRecords}">
+          <div class="project-wrap" >
+            <img href="#" class="img" src="../../../assets/images//{{this.item.image}}">
+            <div class="text p-4">
+              <span class="price">{{item.price}} VND</span>
+              <span class="days">Ngày đăng: {{item.dateSubmit | date : 'dd/MM/yyyy' }}</span>
+              <h3><a (click)=ViewBlogVn(item.id)>{{item.name}}</a></h3>
+              <!-- <p class="location"><span class="ion-ios-map"></span> {{item.name}}</p> -->
+              <ul>
+                <li><span class="flaticon-mountains"></span>{{item.address}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- <pagination-controls id="listing" style="text-align: center; " maxSize="5" directionLinks="true"
+        (pageChange)="page=$event"></pagination-controls> -->
+        <!--data-->
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section testimony-section bg-bottom" style="background-image: url(../../../assets/img/bg_3.jpg);">
+    <div class="container">
+      <div class="row justify-content-center pb-4">
+        <div class="col-md-7 text-center heading-section ">
+          <h2 class="mb-4">Tourist Feedback</h2>
+        </div>
+      </div>
+      <carousel class="container" [autoplay]="true">
+          <div class="carousel-cell view overlay zoom" *ngFor="let item of vn">
+              <img class="" src="../../../assets/images//{{this.item.image}} " > 
+              
+          </div>
+      </carousel>
+    </div>
+  </section>
+
+  <mdb-carousel class="carousel slide carousel-fade container mt-5" [animation]="'fade'">
+    <mdb-carousel-item *ngFor="let item of vn">
+      <img class="d-block w-100" src="../../../assets/images//{{this.item.image}}" alt="First slide" height="500px">
+    </mdb-carousel-item>
+  </mdb-carousel>
+
