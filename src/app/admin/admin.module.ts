@@ -19,6 +19,9 @@ import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
 import { GetidComponent } from './getid/getid.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -27,7 +30,13 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     HeaderComponent,
     SidenavComponent, 
     HomeComponent, 
-    DashboardComponent, CreateComponent, UpdateComponent, GetidComponent
+    DashboardComponent, 
+    CreateComponent, 
+    UpdateComponent, 
+    GetidComponent, 
+    UserListComponent, 
+    UserUpdateComponent, 
+    UserDetailsComponent
   ],
   imports: [
     CommonModule,

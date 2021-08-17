@@ -10,6 +10,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ViewidComponent } from './viewid/viewid.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     WebsiteRoutingModule,
     MDBBootstrapModule.forRoot(),
     NgxPaginationModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     WebsiteComponent,

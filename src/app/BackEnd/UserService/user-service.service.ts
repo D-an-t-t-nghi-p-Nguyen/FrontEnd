@@ -80,7 +80,7 @@ logout() {
   localStorage.removeItem('role');
   localStorage.removeItem('avatar');
   this.userSubject.next(null);
-  this._router.navigate(['']);
+  this._router.navigate(['/homeweb']);
 }
 findByEmailID(emailId :User){
   return this._http.get<User>(`${this.baseURL}/user-findByEmail/${emailId}`);

@@ -1,0 +1,39 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Quản lý User</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="">
+  
+          <!--data-->
+          <div class="panel panel-primary">
+            <div class="panel-body">
+              <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover text-center"  >
+                <thead>
+                  <tr>
+                    <th>User Name</th>
+                    <th>Email Id</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr  *ngFor="let item of user">
+                    <td>{{item.userName}}</td>
+                    <td>{{item.emailId}}</td>
+                    <td><img src="../../../assets/images//{{this.item.avatar}}" alt="" width="100" height="100"></td>
+                    <td>
+                      <button (click)=updateUser(item.id) class="btn btn-primary">Update</button>
+                      <button (click)=deleteUser(item.id) class="btn btn-danger" style="margin-left: 10px">Delete</button>
+                      <button (click)=detailsUser(item.id) class="btn btn-success" style="margin-left: 10px">View</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--data-->
+  
+  
+      </div>
+    </div>
+  </div>
+  

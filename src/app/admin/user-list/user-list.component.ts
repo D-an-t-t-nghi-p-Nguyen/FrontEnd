@@ -1,0 +1,56 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { UserModel } from 'src/app/BackEnd/UserModel/user-model';
+import { UserServiceService } from 'src/app/BackEnd/UserService/user-service.service';
+
+@Component({
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss']
+})
+export class UserListComponent implements OnInit {
+
+  user:UserModel[];
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject<any>();
+  constructor(  
+    private userService : UserServiceService, 
+    private _roter :Router
+    ) { }
+
+  ngOnDestroy(): void {
+      this.dtTrigger.unsubscribe();
+  }
+  
+  ngOnInit(): void {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10,
+      
+    };
+    this.userService.GetUser().subscribe(data=>{
+      this.user=data.sort((a,b) => b.id - a.id);
+      
+      this.dtTrigger.next();
+    })
+
+  }
+
+  detailsUser(id:number){
+    this._roter.navigate(['/admin/userdetails',id]);
+  }
+
+  updateUser(id:number){
+    this._roter.navigate(['/admin/userupdate',id]);
+  }
+
+  deleteUser(id:number){
+    this.userService.DeleteUser(id).subscribe(data=>{
+      this.userService.GetUser().subscribe(data=>{
+        this.user=data.sort((a,b) => b.id - a.id);
+      })
+    })
+  }
+
+}

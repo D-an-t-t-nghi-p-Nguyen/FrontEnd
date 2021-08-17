@@ -1,0 +1,26 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Dashboard</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="page__content-data position-absolute text-center">
+  
+          <!--data-->
+          <div class="container">
+            <div class="card profile-card-2 ">
+             <div class="card-body pt-5">
+                 <img [src]="imageUrl" alt="profile-image" class="profile" width="50%">
+                 <h5>Name: {{user.userName}}&nbsp;(<b class="b-role">{{user.role_id?.name}}</b>)</h5>
+                 <p class="card-text">Email: {{user.emailId}}</p>
+             </div>
+             <br><br><br>
+             <div class="card-body border-top border-light">
+              </div>
+            </div>
+            <a [routerLink]="['/admin/userlist']" >Black</a>
+          </div>
+          <!--data-->
+  
+  
+      </div>
+    </div>
+  </div>
+  
