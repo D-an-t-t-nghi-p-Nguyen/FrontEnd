@@ -63,4 +63,12 @@ export class VnService {
   GetOderByBlogId(motel_id:number){
     return this.httpClient.get<OderRequest[]>(`${this.BaseURL}/oder-bymotel?motel_id=${motel_id}`);
   }
+
+  BuyOder(id:number){
+    return this.httpClient.delete<Boolean>(`${this.BaseURL}/oder/${id}`)
+  }
+
+  GetOderBuy(){
+    return this.httpClient.get<OderRequest[]>(`${this.BaseURL}/oderdelete`);
+  }
 }

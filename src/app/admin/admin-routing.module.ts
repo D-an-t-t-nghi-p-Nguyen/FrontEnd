@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
+import { BuyoderComponent } from './buyoder/buyoder.component';
 import { CreateComponent } from './create/create.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GetidComponent } from './getid/getid.component';
 import { HomeComponent } from './home/home.component';
+import { OderComponent } from './oder/oder.component';
 import { UpdateComponent } from './update/update.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -23,7 +25,9 @@ const routes: Routes = [
     { path: 'getid/:id', component:GetidComponent},
     { path: 'userlist', component:UserListComponent},
     { path: 'userdetails/:id',  component:UserDetailsComponent},
-    { path: 'userupdate/:id', component:UserUpdateComponent}
+    { path: 'userupdate/:id', component:UserUpdateComponent},
+    { path: 'oderadmin', component:OderComponent},
+    { path: 'oderbuy' ,component:BuyoderComponent}
   ]
 }];
 

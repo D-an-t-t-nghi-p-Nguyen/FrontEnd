@@ -1,10 +1,9 @@
 <div class="view">
   <img src="../../../assets/images/thow_under-bridge-1024x635.jpg" class="img-fluid" alt="" width="100%">
-  <div class="mask flex-center rgba-blue-light">
+  <div class="mask flex-center gradient-custom">
     <p class="white-text">strong overlay</p>
   </div>
 </div>
-
 
 <section class="text-center jumbotron">
 
@@ -68,7 +67,6 @@
         </div>
       </div>
       <div class="row">
-        <!--data-->
         <div class="col-md-4"  *ngFor="let item of vn | paginate:{id: 'listing',
         itemsPerPage:6,
         currentPage: page,
@@ -79,16 +77,14 @@
               <span class="price">{{item.price}} VND</span>
               <span class="days">Ngày đăng: {{item.dateSubmit | date : 'dd/MM/yyyy' }}</span>
               <h3><a (click)=ViewBlogVn(item.id)>{{item.name}}</a></h3>
-              <!-- <p class="location"><span class="ion-ios-map"></span> {{item.name}}</p> -->
               <ul>
                 <li><span class="flaticon-mountains"></span>{{item.address}}</li>
               </ul>
             </div>
           </div>
         </div>
-        <!-- <pagination-controls id="listing" style="text-align: center; " maxSize="5" directionLinks="true"
-        (pageChange)="page=$event"></pagination-controls> -->
-        <!--data-->
+        <pagination-controls id="listing" style="text-align: center; " maxSize="5" directionLinks="true"
+        (pageChange)="page=$event"></pagination-controls>
       </div>
     </div>
 </section>
@@ -115,3 +111,118 @@
     </mdb-carousel-item>
 </mdb-carousel>
 
+<!-- Default form login -->
+<form class="text-center border border-light p-5 container">
+
+  <p class="h4 mb-4">Sign in</p>
+
+  <!-- Email -->
+  <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+  <!-- Password -->
+  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+  <div class="d-flex justify-content-around">
+    <div>
+      <!-- Remember me -->
+      <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+    </div>
+    <div>
+      <!-- Forgot password -->
+      <a href="">Forgot password?</a>
+    </div>
+  </div>
+
+  <!-- Sign in button -->
+  <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+
+  <!-- Register -->
+  <p>Not a member?
+    <a href="">Register</a>
+  </p>
+
+  <!-- Social login -->
+  <p>or sign in with:</p>
+
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="facebook"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="twitter"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="linkedin"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="github"></mdb-icon>
+  </a>
+
+</form>
+<!-- Default form login -->
+
+<form class="container">
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form3Example1" class="form-control" />
+        <label class="form-label" for="form3Example1">First name</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form3Example2" class="form-control" />
+        <label class="form-label" for="form3Example2">Last name</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="email" id="form3Example3" class="form-control" />
+    <label class="form-label" for="form3Example3">Email address</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input type="password" id="form3Example4" class="form-control" />
+    <label class="form-label" for="form3Example4">Password</label>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input
+      class="form-check-input me-2"
+      type="checkbox"
+      value=""
+      id="form2Example3"
+      checked
+    />
+    <label class="form-check-label" for="form2Example3">
+      Subscribe to our newsletter
+    </label>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>or sign up with:</p>
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-facebook-f"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-google"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-twitter"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-github"></i>
+    </button>
+  </div>
+</form>

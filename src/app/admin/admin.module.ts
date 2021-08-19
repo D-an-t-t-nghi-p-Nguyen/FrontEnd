@@ -22,6 +22,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { OderComponent } from './oder/oder.component';
+import { BuyoderComponent } from './buyoder/buyoder.component';
+import { TalkComponent } from './talk/talk.component';
+import { NewsComponent } from './news/news.component';
 
 
 @NgModule({
@@ -36,7 +40,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     GetidComponent, 
     UserListComponent, 
     UserUpdateComponent, 
-    UserDetailsComponent
+    UserDetailsComponent, OderComponent, BuyoderComponent, TalkComponent, NewsComponent
   ],
   imports: [
     CommonModule,

@@ -11,6 +11,8 @@ import { ViewidComponent } from './viewid/viewid.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BlogComponent } from './blog/blog.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -20,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent, 
     HomewebComponent, 
     ContactComponent, 
-    ViewidComponent,
+    ViewidComponent, 
+    BlogComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgxPaginationModule,
     IvyCarouselModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserModule
   ],
   exports:[
     WebsiteComponent,

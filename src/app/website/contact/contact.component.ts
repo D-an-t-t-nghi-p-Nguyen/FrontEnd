@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Talk } from 'src/app/BackEnd/TalkModel/talk';
+import { TalkService } from 'src/app/BackEnd/TalkService/talk.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  talk:Talk = new Talk();
+  talks:Talk[];
+
+  constructor(
+    private talkService:TalkService,
+    private route:Router,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  SaveTalk(){
+    this.talkService.CreateTalk(this.talk).subscribe(data=>{
+      console.log(data);
+      this.GotoTalk();
+    });
+  }
+
+  onSubmit(){``
+  console.log(this.talk);
+  this.SaveTalk()
+}
+
+  GotoTalk(){
+    this.route.navigate(['/homeweb'])
   }
 
 }
