@@ -26,6 +26,9 @@ import { OderComponent } from './oder/oder.component';
 import { BuyoderComponent } from './buyoder/buyoder.component';
 import { TalkComponent } from './talk/talk.component';
 import { NewsComponent } from './news/news.component';
+import { UpdateNewsComponent } from './update-news/update-news.component';
+import { CreateNewsComponent } from './create-news/create-news.component';
+import { GetIdNewsComponent } from './get-id-news/get-id-news.component';
 
 
 @NgModule({
@@ -40,7 +43,7 @@ import { NewsComponent } from './news/news.component';
     GetidComponent, 
     UserListComponent, 
     UserUpdateComponent, 
-    UserDetailsComponent, OderComponent, BuyoderComponent, TalkComponent, NewsComponent
+    UserDetailsComponent, OderComponent, BuyoderComponent, TalkComponent, NewsComponent, UpdateNewsComponent, CreateNewsComponent, GetIdNewsComponent
   ],
   imports: [
     CommonModule,

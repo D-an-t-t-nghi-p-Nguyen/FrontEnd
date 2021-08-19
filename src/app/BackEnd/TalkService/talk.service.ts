@@ -20,7 +20,11 @@ export class TalkService {
     return this.httpClient.post(`${this.BaseURL}/talk`,talk);
   }
 
-  DeleteTalk(id:number):Observable<Object>{
+  // DeleteTalk(id:number){
+  //   return this.httpClient.delete<Boolean>(`${this.BaseURL}/talk/${id}`);
+  // }
+
+  DeleteTalk(id: number): Observable<Object>{
     return this.httpClient.delete(`${this.BaseURL}/talk/${id}`);
   }
   

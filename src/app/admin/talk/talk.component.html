@@ -1,1 +1,43 @@
-<p>talk works!</p>
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Hỗ trợ khách hàng</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="">
+  
+
+          <!--data-->
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Number</th>
+                    <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor ="let item of talk">
+                        <td>
+                            {{item.name}}
+                        </td>
+                        <td>
+                            {{item.email}}
+                        </td>
+                        <td>
+                            {{item.message}}
+                        </td>
+                        <td>
+                            {{item.number}}
+                        </td>
+                        <td>
+                            <button type="button" class="btn rounded-btn" (click)="deleteEmployee(item.id)"><mat-icon>close</mat-icon></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          <!--data-->
+  
+  
+      </div>
+    </div>
+</div>
