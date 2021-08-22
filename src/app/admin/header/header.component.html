@@ -3,11 +3,6 @@
       <button mat-icon-button (click)="toggleSidebar()">
         <mat-icon>menu</mat-icon>
       </button>
-      <ul class="row m-0 align-items-center">
-        <li>
-          <a mat-list-item routerLink="/homeweb" class="btn rounded-btn"> <mat-icon>web</mat-icon></a>
-        </li>
-      </ul>
       <div class="row mr-2 ml-auto" *ngIf="user">
 
         <ul class="row m-0 align-items-center">
@@ -17,17 +12,21 @@
               [matMenuTriggerFor]="menu"
               class="user mt-2 d-flex align-items-center"
             >
-              <img src="./assets/user.jpg" alt="" class="user-image mr-1 p-2" />
+              <img src="../assets/images/{{this.urlavatar}}" alt="" class="user-image mr-1 p-2" />
   
-              {{user.userName}}
+              {{user}}
               <mat-icon class="user-image-icon ml-1"
                 >keyboard_arrow_down</mat-icon
               >
             </button>
             <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="/homeweb">
+                <mat-icon>web</mat-icon>
+                Trang chủ
+              </button>
               <button mat-menu-item (click)="logout()" href="http://localhost:4200/homeweb">
                 <mat-icon>exit_to_app</mat-icon>
-                Logout
+                Đăng xuất
               </button>
             </mat-menu>
           </li>

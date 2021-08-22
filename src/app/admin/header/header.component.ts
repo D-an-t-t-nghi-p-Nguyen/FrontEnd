@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
   
   user:User;
   role : number;
+  urlavatar:string;
+  avatar: string;
 
   constructor(
     private router: Router,
@@ -21,9 +23,13 @@ export class HeaderComponent implements OnInit {
     ) {
       this._serveceUser.userEntity.subscribe(x => this.user = x);
       this._serveceUser.roleEntity.subscribe(y => this.role = y);
+      this._serveceUser.AvatarEntity.subscribe(x => this.urlavatar = x);
     }
 
   ngOnInit(): void {
+    console.log(this.user);
+    console.log(this.urlavatar)
+    
   }
 
   toggleSidebar() {

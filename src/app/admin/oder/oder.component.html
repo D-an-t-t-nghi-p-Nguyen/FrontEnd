@@ -1,5 +1,5 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">Quản lý giỏ hàng</div>
+    <div class="d-flex page__box p-3 mt-2">Sản phẩm chưa được thanh toán</div>
     <div class="page__content shadow p-3 position-relative">
       <!-- <div class="page__content-data position-absolute text-center"> -->
         <div class="">
@@ -23,12 +23,12 @@
                   <td>{{item.number}}</td>
                   <td>{{item.amount}}</td>
                   <td>{{item.dateGo}}</td>
-                  <td>{{item.dateBooking}}</td>
+                  <td>{{item.dateBooking | date : 'medium'}}</td>
                   <td>{{item.user_id.userName}}</td>
                   <td>{{item.motel_id.name}}</td>
-                  <td>{{item.price}}</td>
+                  <td>{{item.price}} VND</td>
                   <td>
-                    <button  class="btn rounded-btn" (click)=BuyOder(item.id)>Đã thanh toán
+                    <button mat-menu-item class="text-center" (click)=BuyOder(item.id)><mdb-icon fab icon="cc-paypal"></mdb-icon>
                     </button>
                 </td>
                 </tr>

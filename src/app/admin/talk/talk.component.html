@@ -1,11 +1,11 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">Hỗ trợ khách hàng</div>
+    <div class="d-flex page__box p-3 mt-2">Phản hồi khách hàng</div>
     <div class="page__content shadow p-3 position-relative">
       <div class="">
   
 
           <!--data-->
-            <table class="table">
+            <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
                 <thead>
                     <tr>
                     <th>Name</th>
@@ -30,7 +30,7 @@
                             {{item.number}}
                         </td>
                         <td>
-                            <button type="button" class="btn rounded-btn" (click)="deleteEmployee(item.id)"><mat-icon>close</mat-icon></button>
+                            <button type="button" mat-menu-item class="text-center" (click)="deleteEmployee(item.id)"><mdb-icon fas icon="trash-alt"></mdb-icon></button>
                         </td>
                     </tr>
                 </tbody>

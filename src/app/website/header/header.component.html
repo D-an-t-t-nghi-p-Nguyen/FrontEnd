@@ -14,14 +14,27 @@
   <!-- {{user?.userName}} -->
   <div class="dropdown" mdbDropdown >
     <button mdbDropdownToggle type="button" mdbBtn color="" class="dropdown-toggle waves-light" style="box-shadow:none"
-      mdbWavesEffect>
-      {{user?.userName}}
+      mdbWavesEffect *ngIf="user">
+      <div class="col-md-12">
+        <img src="../assets/images/{{this.urlavatar}}" width="30px">
+      </div>
+      <div class="col-md-12">
+        {{user.userName}}
+      </div>
+      
     </button>
+    <button mdbDropdownToggle type="button" mdbBtn color="" class="dropdown-toggle waves-light" style="box-shadow:none"
+    mdbWavesEffect *ngIf="!user">
+    <div class="col-md-12">
+      Tài khoản
+    </div>
+    
+  </button>
   
     <div class="dropdown-menu">
       <div *ngIf="user">
         <a *ngIf="role === 1" routerLink="/admin" class="dropdown-item">Tới trang Admin</a>
-        <a *ngIf="role === 2" routerLink="/" class="dropdown-item" >Xem thông tin</a>
+        <a *ngIf="role === 2" routerLink="/viewuser" class="dropdown-item" >Xem thông tin</a>
       </div>
       <li class="nav-item" *ngIf="!user">
         <a [routerLink]="['/register']" class="dropdown-item" >Đăng kí</a>

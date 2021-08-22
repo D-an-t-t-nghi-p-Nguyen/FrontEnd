@@ -5,10 +5,10 @@
   
           <!--data-->
           <div class="">
-            <a routerLink="/admin/userlist"  class="btn rounded-btn"><mat-icon>reply</mat-icon></a>
+            <a routerLink="/admin/userlist"  mat-menu-item class="text-left"><mdb-icon fas icon="reply"></mdb-icon></a>
           </div>
           <div *ngIf="formUser">
-            <form class="page" (ngSubmit)="Submit()" [formGroup]="formUser" style="color: black;">
+            <form class="" (ngSubmit)="Submit()" [formGroup]="formUser" style="color: black;">
               <div class="form-group">
                 <label>Email : </label>
                 <input type="email" formControlName="emailId" class="form-control"><br>
@@ -48,7 +48,7 @@
                         <img [src]="imageUrl" style="width:250px;height:200px"  >
                       </div>
                   </div> -->
-                  <input type="submit" class="btn btn-primary" value="Update">
+                  <button type="submit" mat-menu-item class="text-center">Cập nhật</button>
           </form>
           </div>
 

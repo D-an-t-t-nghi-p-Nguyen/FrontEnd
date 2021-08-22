@@ -1,32 +1,34 @@
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">Quản lý giỏ hàng</div>
+    <div class="d-flex page__box p-3 mt-2">Sản phẩm đã được thanh toán</div>
     <div class="page__content shadow p-3 position-relative">
       <!-- <div class="page__content-data position-absolute text-center"> -->
         <div class="">
 
         <!-- data -->
-            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
-              <thead class="thead-dark">
-                <tr>
-                  <th>Số điện thoại</th>
-                  <th>Số lượng</th>
-                  <th>Ngày xuất phát</th>
-                  <th>Ngày đặt vé</th>
-                  <th>Tên Người đặt vé </th>
-                  <th>Tên địa điểm </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of oder">
-                  <td>{{item.number}}</td>
-                  <td>{{item.amount}}</td>
-                  <td>{{item.dateGo}}</td>
-                  <td>{{item.dateBooking}}</td>
-                  <td>{{item.user_id.userName}}</td>
-                  <td>{{item.motel_id.name}}</td>
-                </tr>
-              </tbody>
-            </table>
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>Số điện thoại</th>
+              <th>Số lượng</th>
+              <th>Ngày xuất phát</th>
+              <th>Ngày đặt vé</th>
+              <th>Tên Người đặt vé </th>
+              <th>Tên địa điểm </th>
+              <th>Tổng giá tiền</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of oder">
+              <td>{{item.number}}</td>
+              <td>{{item.amount}}</td>
+              <td>{{item.dateGo}}</td>
+              <td>{{item.dateBooking | date : 'medium'}}</td>
+              <td>{{item.user_id.userName}}</td>
+              <td>{{item.motel_id.name}}</td>
+              <td>{{item.price}} VND</td>
+            </tr>
+          </tbody>
+        </table>
         <!-- /data -->
 
       </div>

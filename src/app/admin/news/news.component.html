@@ -6,7 +6,7 @@
 
           <!--data-->
           <div class="">
-            <a routerLink="/admin/createnews"  class="btn rounded-btn"><mat-icon>create</mat-icon></a>
+            <a routerLink="/admin/createnews"  mat-menu-item class="text-center"><mdb-icon fas icon="plus"></mdb-icon> Thêm tin tức</a>
           </div>
               <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
                 <thead class="thead-dark">
@@ -16,8 +16,8 @@
                     <th>nội dung</th>
                     <th>Ngày đăng</th>
                     <th>Ảnh</th>
-                    <th>Cập nhật</th>
-                    <th>Xem chi tiết</th>
+                    <th>Xem</th>
+                    <th>Sửa</th>
                     <th>Xóa</th>
                   </tr>
                 </thead>
@@ -26,25 +26,21 @@
                     <td>{{item.name}}</td>
                     <td><textarea name="" id="" cols="" rows="1">{{item.content1}}</textarea></td>
                     <td><textarea name="" id="" cols="" rows="1">{{item.content2}}</textarea></td>
-                    <td>{{item.dateSubmit}}</td>
+                    <td>{{item.dateSubmit | date : 'medium'}}</td>
                     <td><img src="./../../../assets/images//{{this.item.image}}" alt="" width="15" height="25"></td>
+                    <td>
+                      <button  mat-menu-item class="text-center" (click)=ViewBlog(item.id)>
+                        <mdb-icon fas icon="eye"></mdb-icon>
+                      </button>
+                    </td>
                     <td class="">
-                      <button  class="btn rounded-btn" (click)=UpdateBlog(item.id) >
-                        <mat-icon>
-                          update
-                        </mat-icon>
+                      <button  mat-menu-item class="text-center" (click)=UpdateBlog(item.id) >
+                        <mdb-icon fas icon="edit"></mdb-icon>
                       </button>
                     </td>
                     <td>
-                      <button  class="btn rounded-btn" (click)=ViewBlog(item.id)>
-                        <mat-icon>
-                          visibility
-                        </mat-icon>
-                      </button>
-                    </td>
-                    <td>
-                        <button  class="btn rounded-btn" (click)=deleteBlog(item.id)>
-                          <mat-icon>delete</mat-icon>
+                        <button  mat-menu-item class="text-center" (click)=deleteBlog(item.id)>
+                          <mdb-icon fas icon="trash-alt"></mdb-icon>
                         </button>
                     </td>
                   </tr>

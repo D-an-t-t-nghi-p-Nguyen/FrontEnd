@@ -11,7 +11,7 @@ import { VnService } from 'src/app/BackEnd/WebService/vn.service';
 export class CreateComponent implements OnInit {
 
   formBlog= new FormGroup({
-    name  :new FormControl(""),
+    name  :new FormControl("",),
     address  :new FormControl(""),
     price :new FormControl(""),
     content :new FormControl(""),
@@ -54,5 +54,6 @@ export class CreateComponent implements OnInit {
   goToUserList(){
     this.router.navigate(['/admin/home'])
   }
+  
 
 }

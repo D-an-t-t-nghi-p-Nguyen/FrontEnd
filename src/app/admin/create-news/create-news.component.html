@@ -5,9 +5,9 @@
   
           <!--data-->
           <div>
-            <a [routerLink]="['/admin/news']" class="btn rounded-btn"><mat-icon>reply</mat-icon></a>
+            <a [routerLink]="['/admin/news']" mat-menu-item class="text-left"><mdb-icon fas icon="reply"></mdb-icon> Trở về</a>
         </div>
-       <form class="page" (ngSubmit)="Submit()" [formGroup]="this.formNews" style="color: black;">
+       <form class="" (ngSubmit)="Submit()" [formGroup]="this.formNews" style="color: black;">
             <div class="form-group">
                 <label for="formGroupExampleInput">Tên tin tức</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" formControlName="name" placeholder="Tên tin tức">
@@ -21,15 +21,15 @@
                 <input type="text" class="form-control" id="formGroupExampleInput" formControlName="content2" placeholder="Nội dung">
             </div>
                 <div class="form-group">
-                    <label>Image</label>
+                    <label>Ảnh</label>
                     <div class="custom-file mb-3">
-                      <input type="file"  class="custom-file-input" accept="image/*" (change)="handleFileInput($event.target.files)" required>
+                      <input type="file"  class="form-control" accept="image/*" (change)="handleFileInput($event.target.files)" required>
                     </div>
                     <div class="form-ground" >
                       <img [src]="imageUrl" style="width:250px;height:200px"  >
                     </div>
                 </div>
-                <input type="submit" value="Create">
+                <button type="submit" mat-menu-item class="text-center"><mdb-icon fas icon="plus"></mdb-icon> Thêm mới tin tức</button>
         </form>
           <!--data-->
   
