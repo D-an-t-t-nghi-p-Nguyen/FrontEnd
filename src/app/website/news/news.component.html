@@ -1,0 +1,37 @@
+<div class="view">
+    <img src="../../../assets/images/thow_under-bridge-1024x635.jpg" class="img-fluid" alt="" width="100%">
+    <div class="mask flex-center gradient-custom">
+      <p class="white-text">strong overlay</p>
+    </div>
+  </div>
+
+  <section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center pb-4">
+        <div class="col-md-12 heading-section text-center ">
+          <h2 class="mb-4">Recent Post</h2>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col-md-4 d-flex" *ngFor="let item of news">
+            <div class="blog-entry justify-content-end">
+            <a (click)=ViewNews(item.id) class="block-20" style="background-image: url('../../../assets/images//{{this.item.image}}');">
+            </a>
+            <div class="text mt-3 float-right d-block">
+                <div class="d-flex align-items-center mb-4 topp">
+                    <div class="one">
+                        <span class="day">{{item.dateSubmit | date : 'dd' }}</span>
+                    </div>
+                    <div class="two">
+                        <span class="yr">{{item.dateSubmit | date : 'yyyy' }}</span>
+                        <span class="mos">{{item.dateSubmit | date : 'MMM' }}</span>
+                    </div>
+                </div>
+              <h3 class="heading"><a (click)=ViewNews(item.id)>{{item.name}}</a></h3>
+              <p>{{item.content1}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

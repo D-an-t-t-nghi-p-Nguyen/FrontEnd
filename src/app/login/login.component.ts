@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators  } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserModel } from '../BackEnd/UserModel/user-model';
 import { UserServiceService } from '../BackEnd/UserService/user-service.service';
@@ -43,5 +44,4 @@ export class LoginComponent implements OnInit {
       }
       )
     }
-
 }

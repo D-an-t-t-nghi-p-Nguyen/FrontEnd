@@ -14,6 +14,7 @@
                   <th>Ngày đặt vé</th>
                   <th>Tên Người đặt vé </th>
                   <th>Tên địa điểm </th>
+                  <th>Tổng giá tiền</th>
                   <th>Thanh toán</th>
                 </tr>
               </thead>
@@ -25,6 +26,7 @@
                   <td>{{item.dateBooking}}</td>
                   <td>{{item.user_id.userName}}</td>
                   <td>{{item.motel_id.name}}</td>
+                  <td>{{item.price}}</td>
                   <td>
                     <button  class="btn rounded-btn" (click)=BuyOder(item.id)>Đã thanh toán
                     </button>

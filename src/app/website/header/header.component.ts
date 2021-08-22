@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   user:User;
   urlavatar:string;
   role : number;
-
   constructor(
     private vnservice:VnService,
     private router:Router,
@@ -29,6 +28,7 @@ export class HeaderComponent implements OnInit {
     this._serveceUser.findByEmailID(this.user).subscribe(data=>{
       this.user = data;
       this.urlavatar=   data?.avatar;
+      console.log(this.user)
     });
   }
   

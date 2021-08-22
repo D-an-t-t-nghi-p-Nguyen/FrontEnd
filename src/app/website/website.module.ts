@@ -13,6 +13,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BlogComponent } from './blog/blog.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { NewsComponent } from './news/news.component';
+import { NewsidComponent } from './newsid/newsid.component';
+import { ModalModule, WavesModule, InputsModule, ButtonsModule } from 'angular-bootstrap-md'
 
 
 
@@ -23,7 +26,9 @@ import { BrowserModule } from '@angular/platform-browser';
     HomewebComponent, 
     ContactComponent, 
     ViewidComponent, 
-    BlogComponent,
+    BlogComponent, 
+    NewsComponent, 
+    NewsidComponent,
   ],
   imports: [
     CommonModule,
@@ -33,7 +38,11 @@ import { BrowserModule } from '@angular/platform-browser';
     IvyCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    ModalModule,
+    WavesModule,
+    InputsModule,
+    ButtonsModule
   ],
   exports:[
     WebsiteComponent,

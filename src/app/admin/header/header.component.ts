@@ -24,9 +24,6 @@ export class HeaderComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this._serveceUser.findByEmailID(this.user).subscribe(data=>{
-      this.user = data;
-    })
   }
 
   toggleSidebar() {

@@ -1,7 +1,8 @@
 export class Oder {
     id ? :number;
     dateGo:string;
-    amount:string;
+    amount:number;
+    price:number;
     number :string;
     user_id ?:number
     motel_id:number
