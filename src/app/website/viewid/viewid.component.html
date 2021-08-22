@@ -1,1 +1,214 @@
-<p>admin</p>
+<div class="view">
+    <img src="../../../assets/images/thow_under-bridge-1024x635.jpg" class="img-fluid" alt="" width="100%">
+    <div class="mask flex-center gradient-custom">
+      <div>
+        <h1 class="white-text"><b>{{item.name}}</b></h1>
+        <p class="center">
+            <button type="button" mdbBtn color="primary" 
+            class="relative waves-light" (click)="basicModa.show()" 
+            mdbWavesEffect *ngIf="!user">
+                Đặt vé
+            </button></p>
+        <p  class="center">
+            <button  type="button" mdbBtn color="primary" 
+            class="relative waves-light" (click)="basicModal.show()" 
+            mdbWavesEffect *ngIf="user">
+                Đặt vé
+            </button>
+        </p>
+      </div>
+      <div>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+
+<div class="site-section mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="owl-carousel slide-one-item with-dots">
+            <div><img [src]="urlImage" width="100%" alt="Image" class="img-fluid"></div>
+          </div>
+        </div>
+        <div class="col-lg-5 pl-lg-5 ml-auto">
+          <div class="mb-5">
+            <h3 class="text-black mb-4">{{item.name}}</h3>
+            <p>{{item.content}}</p>
+            <p>Số: {{item.address}}</p>             
+            <p>Giá vé: {{item.price}}</p>
+          </div>
+
+
+
+
+            <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModa.show()" mdbWavesEffect *ngIf="!user">Đặt vé</button>
+
+            <div mdbModal #basicModa="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-full-height modal-right" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="basicModa.hide()">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title w-100" id="myModalLabel">Yêu cầu đăng nhập</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>click nếu chưa có tài khoản</p>
+                    <button type="button" mdbBtn color="secondary" routerLink="/register" class="waves-light">Đăng kí</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModa.hide()" mdbWavesEffect>thoát</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5" >
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8">
+            <div class="d-flex flex-column comment-section">
+                <div >
+                    <p><b>Bình luận của khách hàng</b></p>
+                </div>
+                <hr>
+                <div class="bg-white p-2"*ngFor="let item of comments| paginate:{
+                itemsPerPage:3,
+                currentPage: page,
+                totalItems:totalRecords}">
+                    <div class="d-flex flex-row user-info">
+                      <img class="rounded-circle" src="../../../../assets/images/{{item.user_id.avatar}}" width="40">
+                        <div class="d-flex flex-column justify-content-start ml-2">
+                          <span class="d-block font-weight-bold name">{{item.user_id.userName}}</span>
+                          <span class="date text-black-100" >
+                            <a style="size: 10px;">{{item.datecomment | date : 'h:mm' }}, {{item.datecomment | date : 'dd/MM/yyyy' }}</a>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <p class="comment-text">{{item.comment}}</p>
+                    </div>
+                </div>
+                <form #CreateForm="ngForm" (ngSubmit)="Submit()" *ngIf="user">
+                <div class="bg-light p-2">
+                    <div class="d-flex flex-row align-items-start">
+                      <img class="rounded-circle" src="{{this.avatar}}" width="40">
+                      <textarea class="form-control ml-1 shadow-none textarea"  [(ngModel)]="comment1.comment" name="commnet"></textarea>
+                    </div>
+                    <div class="mt-2 text-right">
+                      <button class="btn btn-primary btn-sm shadow-none" type="submit" [disabled]="CreateForm.form.invalid">Post comment</button>
+                      <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button>
+                    </div>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- <p (click)="total()">+</p>
+  <p (click)="remototal ()">-</p> -->
+  <p>TQ : {{ totalQuantity }}</p>
+  <p>TP : {{ totalPrice }}</p>
+
+
+  <form #CreateForm="ngForm" (ngSubmit)="ngSubmit()">
+    <!-- <div class="form-group">
+      <label for="dateOfBirth">Date of birth</label>
+      <div class="input-group">
+        <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><span class="fa fa-calendar"></span></button>
+        </div>
+      </div>
+    </div> -->
+    <div class="modal-body">
+      <label for="DateGo">Date go</label>
+      <div class="input-group">
+        <input id="DateGo" type="date" class="form-control" placeholder="Date go" name="date go"  [(ngModel)]="oder1.dateGo" required >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <div class="input-group">
+        <input type="number" min="0" id="amount" class="form-control" (change)="getTotalPrice()" name="amount" [(ngModel)]="oder1.amount" required >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="price">price</label>
+      <div class="input-group">
+        <input id="price" class="form-control" name="price" [(ngModel)]="oder1.price" disabled >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="number">Number</label>
+      <div class="input-group">
+        <input id="number" class="form-control" placeholder="number" name="number" [(ngModel)]="oder1.number" required >
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" [disabled]="CreateForm.form.invalid">Oder</button>
+    </div>
+  </form>
+
+
+  <form #CreateForm="ngForm" (ngSubmit)="ngSubmit()">
+    <div class="modal-body">
+        <div class="md-form">
+          <input type="date" id="input" class="form-control" name="date go" [(ngModel)]="oder1.dateGo">
+          <label for="input">Ngày tham quan</label>
+        </div>
+    </div>
+    <div class="container">
+        <div class="md-form form-sm">
+          <input mdbInput type="text" id="form1" class="form-control form-control-sm" >
+          <label for="form1" class="">Số điện thoại</label>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="modal-footer">
+        <button type="submit" mdbBtn color="primary" class="relative waves-light" [disabled]="CreateForm.form.invalid" mdbWavesEffect>Save changes</button>
+    </div>
+</form>
+  <!---->
+  <!-- <button  type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect *ngIf="user">Đặt vé</button>
+  <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+          <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title w-100" id="myModalLabel">Đặt vé</h4>
+      </div>
+      <form #CreateForm="ngForm" (ngSubmit)="ngSubmit()">
+          <div class="modal-body">
+              <div class="md-form">
+                <input type="date" id="input" class="form-control" mdbInput>
+                <label for="input">Ngày tham quan</label>
+              </div>
+          </div>
+          <div class="container">
+              <div class="md-form form-sm">
+                <input mdbInput type="text" id="form1" class="form-control form-control-sm" >
+                <label for="form1" class="">Số điện thoại</label>
+              </div>
+          </div>
+          <br>
+          <br>
+          <div class="modal-footer">
+              <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+              <button type="submit" mdbBtn color="primary" class="relative waves-light" [disabled]="CreateForm.form.invalid" mdbWavesEffect>Save changes</button>
+          </div>
+      </form>
+
+      </div>
+  </div>
+  </div> -->

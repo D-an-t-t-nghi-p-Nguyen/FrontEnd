@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomewebComponent } from './homeweb/homeweb.component';
+import { NewsComponent } from './news/news.component';
+import { NewsidComponent } from './newsid/newsid.component';
 import { ViewidComponent } from './viewid/viewid.component';
 import { WebsiteComponent } from './website.component';
 
@@ -15,7 +17,9 @@ const routes: Routes = [
       {path:'homeweb',component:HomewebComponent},
       {path:'contact',component:ContactComponent},
       {path:'viewid/:id',component:ViewidComponent},
-      {path:'blog',component:BlogComponent}
+      {path:'blog',component:BlogComponent},
+      {path:'news',component:NewsComponent},
+      {path:'newsid/:id',component:NewsidComponent},
     ]
   }
 ];
