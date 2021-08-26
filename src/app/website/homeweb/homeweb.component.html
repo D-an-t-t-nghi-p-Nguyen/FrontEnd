@@ -1,18 +1,40 @@
-<div class="view">
-  <img src="../../../assets/img/vithe.jpg" class="img-fluid" alt="" width="100%">
-  <div class="mask flex-center rgba-blue-light">
-    <div class="text-white text-center py-5 px-4 my-5">
-      <div>
-        <!-- <h2 class="h1 py-5 font-weight-bold"><strong>Chào mừng bạn ghé thăm</strong></h2>
-        <p class="mx-5 mb-5">Không chỉ là trang web du lịch, còn là trang web hỗ trợ cho bạn biết thêm về các địa danh nổi tiếng.
-        </p> -->
-        <!-- <a mdbBtn color="white" outline="true" class="waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="clone" class="left"></mdb-icon>View project
-        </a> -->
+<section class="banner_part">
+  <div class="container">
+      <div class="row align-items-center justify-content-center">
+          <div class="col-lg-10">
+              <div class="banner_text text-center">
+                  <div class="banner_text_iner">
+                      <h1> Saintmartine</h1>
+                      <p>Let’s start your journey with us, your dream will come true</p>
+                      <a href="#" class="btn_1">Discover Now</a>
+                  </div>
+              </div>
+          </div>
       </div>
+  </div>
+</section>
+<!-- banner part start-->
+<!-- <div class="view">
+  <img src="../../../assets/images/thow_under-bridge-1024x635.jpg" class="img-fluid" alt="" width="100%">
+  <div class="mask flex-center gradient-custom">
+    <h1 class="h1 py-5 font-weight-bold white-text" >Chào mừng bạn đến với web du lịch</h1>
+  </div>
+</div> -->
+<!-- <mdb-card style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/gradient1.jpg')">
+  <div class="text-white text-center py-5 px-4 my-5">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Create your beautiful website with MDBootstrap</strong></h2>
+      <p class="mx-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+        voluptatem,
+        optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos. Odit sed qui,
+        dolorum!
+      </p>
+      <a mdbBtn color="white" outline="true" class="waves-light" mdbWavesEffect>
+        <mdb-icon fas icon="clone" class="left"></mdb-icon>View project
+      </a>
     </div>
   </div>
-</div>
+</mdb-card> -->
 
 <section class="text-center jumbotron">
 
@@ -60,11 +82,59 @@
 
 </section>
 
+
+    <!--top place start-->
+    <section class="top_place section_padding">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-xl-6">
+                  <div class="section_tittle text-center">
+                      <h2>Web du lịch</h2>
+                      <p></p>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-6 col-md-6" *ngFor="let item of vn | paginate:{id: 'listing',
+              itemsPerPage:4,
+              currentPage: page,
+              totalItems:totalRecords}">
+                  <div class="single_place">
+                      <img src="../../../assets/images//{{this.item.image}}" alt="" height="400px">
+                      <div class="hover_Text d-flex align-items-end justify-content-between">
+                          <div class="hover_text_iner">
+                              <a href="#" class="place_btn">travel</a>
+                              <h3>Saintmartine Iceland</h3>
+                              <p>Technaf, Bangladesh</p>
+                              <div class="place_review">
+                                  <a href="#"><i class="fas fa-star"></i></a>
+                                  <a href="#"><i class="fas fa-star"></i></a>
+                                  <a href="#"><i class="fas fa-star"></i></a>
+                                  <a href="#"><i class="fas fa-star"></i></a>
+                                  <a href="#"><i class="fas fa-star"></i></a>
+                                  <!-- <span>(210 review)</span> -->
+                              </div>
+                          </div>
+                          <div class="details_icon text-right">
+                              <i class="ti-share"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <a href="/blog" class="btn_1 text-cnter text-center">Xem tất cả</a>
+          </div>
+      </div>
+  </section>
+  <!--top place end-->
+
+
+
 <section class="ftco-section ftco-no-pt mt-5">
     <div class="container">
       <div class="row justify-content-center pb-4">
         <div class="col-md-12 heading-section text-center">
           <h2 class="mb-4">Web du lịch</h2>
+          <a class="text-center" href="/blog" ><mdb-icon fab icon="blogger-b"></mdb-icon> Xem tất cả</a>
         </div>
       </div>
       <div class="row">
@@ -73,7 +143,7 @@
         currentPage: page,
         totalItems:totalRecords}">
           <div class="project-wrap" >
-            <img (click)=ViewBlogVn(item.id) class="img" src="../../../assets/images//{{this.item.image}}" height="250px">
+            <img (click)=ViewBlogVn(item.id) class="img" src="../../../assets/images//{{this.item.image}}">
             <div class="text p-4">
               <span class="price">{{item.price}} VND</span>
               <span class="days">Ngày đăng: {{item.dateSubmit | date : 'dd/MM/yyyy' }}</span>
@@ -87,12 +157,6 @@
         <!-- <pagination-controls id="listing" style="text-align: center; " maxSize="5" directionLinks="true"
         (pageChange)="page=$event"></pagination-controls> -->
       </div>
-      <div class="row justify-content-center pb-4">
-        <div class="col-md-12 heading-section text-center">
-          <a type="button" mdbBtn color="primary" mdbWavesEffect href="/blog" ><mdb-icon fab icon="blogger-b"></mdb-icon> Xem tất cả</a>
-        </div>
-      </div>
-
     </div>
 </section>
 
@@ -120,9 +184,10 @@
 
 
 <section class="ftco-section ftco-no-pt mt-5">
-  <div class="justify-content-center pb-4">
+  <div class="row justify-content-center pb-4">
     <div class="col-md-12 heading-section text-center">
       <h2 class="mb-4">Web tin tức</h2>
+      <a class="text-center" href="/news" ><mdb-icon fab icon="blogger-b"></mdb-icon> Xem tất cả</a>
     </div>
   </div>
   <div class="col-md mt-5">
@@ -130,7 +195,7 @@
       <div class="col-md-4 mb-5" *ngFor="let item of news | paginate:{id: 'listing',
       itemsPerPage:9,
       currentPage: page,
-      totalItems:totalRecords}"  height="200px">
+      totalItems:totalRecords}">
       <!-- Card -->
         <mdb-card style="background-image: url('../../../assets/images//{{this.item.image}}')">
   
@@ -151,12 +216,9 @@
       </div>
     </div>
   </div>
-  <div class="justify-content-center pb-4">
-    <div class="col-md-12 heading-section text-center">
-      <button type="button" mdbBtn color="primary" mdbWavesEffect href="/news" ><mdb-icon fab icon="blogger-b"></mdb-icon> Xem tất cả</button>
-    </div>
-  </div>
 </section>
+
+
 
 <section class="ftco-section testimony-section bg-bottom" style="background-image: url(../../../assets/img/bg_3.jpg);">
   <div class="container">
@@ -173,3 +235,121 @@
     </carousel>
   </div>
 </section>
+
+
+
+<!-- Default form login -->
+<form class="text-center border border-light p-5 container mt-5">
+
+  <p class="h4 mb-4">Sign in</p>
+
+  <!-- Email -->
+  <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+  <!-- Password -->
+  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+  <div class="d-flex justify-content-around">
+    <div>
+      <!-- Remember me -->
+      <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+    </div>
+    <div>
+      <!-- Forgot password -->
+      <a href="">Forgot password?</a>
+    </div>
+  </div>
+
+  <!-- Sign in button -->
+  <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+
+  <!-- Register -->
+  <p>Not a member?
+    <a href="">Register</a>
+  </p>
+
+  <!-- Social login -->
+  <p>or sign in with:</p>
+
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="facebook"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="twitter"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="linkedin"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="github"></mdb-icon>
+  </a>
+
+</form>
+<!-- Default form login -->
+
+<form class="container">
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form3Example1" class="form-control" />
+        <label class="form-label" for="form3Example1">First name</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" id="form3Example2" class="form-control" />
+        <label class="form-label" for="form3Example2">Last name</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="email" id="form3Example3" class="form-control" />
+    <label class="form-label" for="form3Example3">Email address</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input type="password" id="form3Example4" class="form-control" />
+    <label class="form-label" for="form3Example4">Password</label>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input
+      class="form-check-input me-2"
+      type="checkbox"
+      value=""
+      id="form2Example3"
+      checked
+    />
+    <label class="form-check-label" for="form2Example3">
+      Subscribe to our newsletter
+    </label>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>or sign up with:</p>
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-facebook-f"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-google"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-twitter"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-github"></i>
+    </button>
+  </div>
+</form>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RoleModel } from '../BackEnd/UserModel/role-model';
 import { UserModel } from '../BackEnd/UserModel/user-model';
@@ -16,13 +15,11 @@ export class RegisterComponent implements OnInit {
   user = new UserModel();
   selectedrole: number=2 ;
   OneFile: File = null
-  registerForm:FormGroup;
 
   constructor(
     private userService: UserServiceService, 
-    private _roter: Router,
-    ) { 
-    }
+    private _roter: Router
+    ) { }
 
 
   ngOnInit(): void {
@@ -36,6 +33,7 @@ export class RegisterComponent implements OnInit {
   selectRoles (event){
     this.selectedrole = event.target.value;
   }
+  
   Submit() {
     const registerData = {
       userName : this.user.userName,

@@ -8,26 +8,24 @@
             <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
               <thead class="thead-dark">
                 <tr>
-                  <th>Tên Người đặt vé </th>
                   <th>Số điện thoại</th>
-                  <th>Ngày đặt vé</th>
-                  <th>Ngày xuất phát</th>
-                  <th>Tên địa điểm </th>
-                  <th>Giá tiền</th>
                   <th>Số lượng</th>
+                  <th>Ngày xuất phát</th>
+                  <th>Ngày đặt vé</th>
+                  <th>Tên Người đặt vé </th>
+                  <th>Tên địa điểm </th>
                   <th>Tổng giá tiền</th>
                   <th>Thanh toán</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of oder">
-                  <td>{{item.user_id.userName}}</td>
                   <td>{{item.number}}</td>
-                  <td>{{item.dateBooking | date : 'medium'}}</td>
-                  <td>{{item.dateGo}}</td>
-                  <td>{{item.motel_id.name}}</td>
-                  <td>{{item.motel_id.price}}</td>
                   <td>{{item.amount}}</td>
+                  <td>{{item.dateGo}}</td>
+                  <td>{{item.dateBooking | date : 'medium'}}</td>
+                  <td>{{item.user_id.userName}}</td>
+                  <td>{{item.motel_id.name}}</td>
                   <td>{{item.price}} VND</td>
                   <td>
                     <button mat-menu-item class="text-center" (click)=BuyOder(item.id)><mdb-icon fab icon="cc-paypal"></mdb-icon>

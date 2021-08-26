@@ -1,4 +1,8 @@
-        <form class="text-center border border-light p-5 container" #RegisterForm="ngForm"(ngSubmit)="Submit()">
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        <img class="user-avatar" src="" width="150px" />
+        <h1>The Travel</h1>
+        <form #RegisterForm="ngForm"(ngSubmit)="Submit()">
             <div class="form-content">
                 <div class="form-group">
                     <input type="email" class="form-control input-underline input-lg"  placeholder="Email" name="email"  
@@ -26,13 +30,11 @@
                 <div class="form-group">
                     <input type="file" name="file" (change)="Selected($event)" class="float-left">
               
-                </div>
+                  </div>
             </div>
-            <button [disabled]="RegisterForm.form.invalid" type="submit"mdbBtn color="info" block="true" class="my-4" (change)="selectRoles($event)">Register</button>  
-            
-            <p>
-                <a href="/login">Đăng nhập</a>
-            </p>
-            
+            <button [disabled]="RegisterForm.form.invalid" type="submit" class="btn rounded-btn" (change)="selectRoles($event)">Register</button
+            >&nbsp;
+            <a [routerLink]="['/login']" class="btn rounded-btn">Log in</a>
         </form>
-
+    </div>
+</div>

@@ -1,23 +1,29 @@
 <div class="view">
-  <img src="../../../assets/img/Tổng-hợp-những-hình-ảnh-đẹp-về-biển-4.jpg" class="img-fluid" alt="" height="">
-  <div class="mask flex-center rgba-blue-light">
-    <div class="text-white text-center py-5 px-4 my-5 ">
+    <img src="../../../assets/images/thow_under-bridge-1024x635.jpg" class="img-fluid" alt="" width="100%">
+    <div class="mask flex-center gradient-custom">
       <div>
-        <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>{{item.name}}</strong></h2>
-        <p class="mx-5 mb-5">Giá vé: {{item.price}}
+        <h1 class="white-text"><b>{{item.name}}</b></h1>
+        <p class="center">
+            <button type="button" mdbBtn color="primary" 
+            class="relative waves-light" (click)="basicModa.show()" 
+            mdbWavesEffect *ngIf="!user">
+                Đặt vé
+            </button></p>
+        <p  class="center">
+            <button  type="button" mdbBtn color="primary" 
+            class="relative waves-light" (click)="basicModal.show()" 
+            mdbWavesEffect *ngIf="user">
+                Đặt vé
+            </button>
         </p>
-        <a (click)="basicModal.show()" 
-        mdbWavesEffect *ngIf="user" mdbBtn color="white" outline="true" class="waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="clone" class="left"></mdb-icon>Đặt vé
-        </a>
-        <a (click)="basicModa.show()" 
-        mdbWavesEffect *ngIf="!user" mdbBtn color="white" outline="true" class="waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="clone" class="left"></mdb-icon>Đặt vé
-        </a>
       </div>
+      <div>
+        
+        
+      </div>
+      
     </div>
   </div>
-</div>
 
 <div class="site-section mt-5">
     <div class="container">
@@ -31,13 +37,12 @@
           <div class="mb-5">
             <h3 class="text-black mb-4">{{item.name}}</h3>
             <p>{{item.content}}</p>
-            <p>Địa chỉ: {{item.address}}</p>             
+            <p>Số: {{item.address}}</p>             
             <p>Giá vé: {{item.price}}</p>
           </div>
 
 
 
-          <button  type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect *ngIf="user">Đặt vé</button>
 
             <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModa.show()" mdbWavesEffect *ngIf="!user">Đặt vé</button>
 
@@ -70,7 +75,7 @@
         <div class="col-md-8">
             <div class="d-flex flex-column comment-section">
                 <div >
-                    <p><b>Bình luận</b></p>
+                    <p><b>Bình luận của khách hàng</b></p>
                 </div>
                 <hr>
                 <div class="bg-white p-2"*ngFor="let item of comments| paginate:{
@@ -94,11 +99,11 @@
                 <div class="bg-light p-2">
                     <div class="d-flex flex-row align-items-start">
                       <img class="rounded-circle" src="{{this.avatar}}" width="40">
-                      <textarea class="form-control ml-1 shadow-none textarea"  [(ngModel)]="comment1.comment" name="commnet" required></textarea>
+                      <textarea class="form-control ml-1 shadow-none textarea"  [(ngModel)]="comment1.comment" name="commnet"></textarea>
                     </div>
                     <div class="mt-2 text-right">
                       <button class="btn btn-primary btn-sm shadow-none" type="submit" [disabled]="CreateForm.form.invalid">Post comment</button>
-                      <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="reset">Cancel</button>
+                      <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button>
                     </div>
                 </div>
               </form>
@@ -106,6 +111,74 @@
         </div>
     </div>
   </div>
+
+  <!-- <p (click)="total()">+</p>
+  <p (click)="remototal ()">-</p> -->
+  <p>TQ : {{ totalQuantity }}</p>
+  <p>TP : {{ totalPrice }}</p>
+
+
+  <form #CreateForm="ngForm" (ngSubmit)="ngSubmit()">
+    <!-- <div class="form-group">
+      <label for="dateOfBirth">Date of birth</label>
+      <div class="input-group">
+        <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><span class="fa fa-calendar"></span></button>
+        </div>
+      </div>
+    </div> -->
+    <div class="modal-body">
+      <label for="DateGo">Date go</label>
+      <div class="input-group">
+        <input id="DateGo" type="date" class="form-control" placeholder="Date go" name="date go"  [(ngModel)]="oder1.dateGo" required >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <div class="input-group">
+        <input type="number" min="0" id="amount" class="form-control" (change)="getTotalPrice()" name="amount" [(ngModel)]="oder1.amount" required >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="price">price</label>
+      <div class="input-group">
+        <input id="price" class="form-control" name="price" [(ngModel)]="oder1.price" disabled >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="number">Number</label>
+      <div class="input-group">
+        <input id="number" class="form-control" placeholder="number" name="number" [(ngModel)]="oder1.number" required >
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" [disabled]="CreateForm.form.invalid">Oder</button>
+    </div>
+  </form>
+
+
+  <form #CreateForm="ngForm" (ngSubmit)="ngSubmit()">
+    <div class="modal-body">
+        <div class="md-form">
+          <input type="date" id="input" class="form-control" name="date go" [(ngModel)]="oder1.dateGo">
+          <label for="input">Ngày tham quan</label>
+        </div>
+    </div>
+    <div class="container">
+        <div class="md-form form-sm">
+          <input mdbInput type="text" id="form1" class="form-control form-control-sm" >
+          <label for="form1" class="">Số điện thoại</label>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="modal-footer">
+        <button type="submit" mdbBtn color="primary" class="relative waves-light" [disabled]="CreateForm.form.invalid" mdbWavesEffect>Save changes</button>
+    </div>
+</form>
+  <!---->
+  <!-- <button  type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect *ngIf="user">Đặt vé</button>
   <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -118,25 +191,13 @@
       <form #CreateForm="ngForm" (ngSubmit)="ngSubmit()">
           <div class="modal-body">
               <div class="md-form">
-                <input type="date" id="input" class="form-control" name="date go" [(ngModel)]="oder1.dateGo" mdbInput>
+                <input type="date" id="input" class="form-control" mdbInput>
                 <label for="input">Ngày tham quan</label>
               </div>
           </div>
           <div class="container">
-            <div class="md-form form-sm">
-              <input mdbInput type="number" id="form2" class="form-control form-control-sm"name="amount" (change)="getTotalPrice()" [(ngModel)]="oder1.amount" required>
-              <label for="form2" class="">Số lượng</label>
-            </div>
-          </div>
-          <div class="container">
-            <div class="md-form form-sm">
-              <input mdbInput type="text" id="form3" class="form-control form-control-sm" name="price" [(ngModel)]="oder1.price" disabled>
-              <label for="form3" class="">Giá tiền</label>
-            </div>
-          </div>
-          <div class="container">
               <div class="md-form form-sm">
-                <input mdbInput type="text" id="form1" class="form-control form-control-sm" name="number" [(ngModel)]="oder1.number" required>
+                <input mdbInput type="text" id="form1" class="form-control form-control-sm" >
                 <label for="form1" class="">Số điện thoại</label>
               </div>
           </div>
@@ -150,4 +211,4 @@
 
       </div>
   </div>
-  </div>
+  </div> -->
