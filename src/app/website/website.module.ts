@@ -16,7 +16,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NewsComponent } from './news/news.component';
 import { NewsidComponent } from './newsid/newsid.component';
 import { ModalModule, WavesModule, InputsModule, ButtonsModule } from 'angular-bootstrap-md';
-import { ViewUserComponent } from './view-user/view-user.component'
+import { ViewUserComponent } from './view-user/view-user.component';
+import { FooterComponent } from './footer/footer.component';
+import { NotfoundComponent } from './notfound/notfound.component'
 
 
 
@@ -29,7 +31,7 @@ import { ViewUserComponent } from './view-user/view-user.component'
     ViewidComponent, 
     BlogComponent, 
     NewsComponent, 
-    NewsidComponent, ViewUserComponent,
+    NewsidComponent, ViewUserComponent, FooterComponent, NotfoundComponent,
   ],
   imports: [
     CommonModule,

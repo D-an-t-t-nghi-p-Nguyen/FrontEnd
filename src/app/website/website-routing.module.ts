@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomewebComponent } from './homeweb/homeweb.component';
 import { NewsComponent } from './news/news.component';
 import { NewsidComponent } from './newsid/newsid.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { ViewidComponent } from './viewid/viewid.component';
 import { WebsiteComponent } from './website.component';
@@ -21,7 +22,9 @@ const routes: Routes = [
       {path:'blog',component:BlogComponent},
       {path:'news',component:NewsComponent},
       {path:'newsid/:id',component:NewsidComponent},
-      {path:'viewuser',component:ViewUserComponent}
+      {path:'viewuser',component:ViewUserComponent},
+      {path:'notfound',component:NotfoundComponent},
+      {path:'**', redirectTo : 'notfound'}
     ]
   }
 ];

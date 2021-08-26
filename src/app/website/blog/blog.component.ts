@@ -12,7 +12,8 @@ export class BlogComponent implements OnInit {
 
   vn:Vn[]
   totalRecords:string;
-  page: number=1;
+  page: number= 1;
+  public sliders: Array<any> = [];
   constructor(
     private vnService:VnService,
     private router:Router

@@ -1,71 +1,32 @@
-  <div class="row justify-content-md-center">
-      <div class="col-md-4">
-          <img class="user-avatar" src="" width="150px" />
-          <h1>The Travel</h1>
-              <form #loginForm="ngForm"(ngSubmit)="loginUser()" >
-                <div class="form-group">
-                  <input type="email" class="form-control input-underline input-lg"  placeholder="Enter email" name="email"  [(ngModel)]="user.emailId" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #email="ngModel"
-                  [class.is-invalid]="email.invalid && email.touched">
-                  <div *ngIf="email.errors && (email.invalid && email.touched)">
-                      <small class="text-danger" *ngIf="email.errors.required ">Email Id is required field</small>
-                      <small class="text-danger" *ngIf="email.errors.pattern">Enter the valid emailID</small>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control input-underline input-lg"  placeholder="Enter password" name="password" required [(ngModel)]="user.password" #password="ngModel"
-                  [class.is-invalid]="password.invalid && password.touched">
-            
-                  <small class="text-danger"[class.d-none]="password.valid || password.untouched">Password Id is required field</small>
-                </div>
-                <button [disabled]="loginForm.form.invalid" type="submit" class="btn rounded-btn">Login</button>
-              &nbsp;
-              <button [routerLink]="['/register']" class="btn rounded-btn">Register</button>
-          </form>
-      </div>
-  </div>
-
-
-  <!-- Default form login -->
-<form class="text-center border border-light p-5 container">
+<form class="text-center border border-light p-5 container" #loginForm="ngForm"(ngSubmit)="loginUser()">
 
   <p class="h4 mb-4">Đăng nhập</p>
 
-  <!-- Email -->
-  <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" required>
-  <!-- Password -->
-  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Mật khẩu">
+  <div class="form-group">
+    <input type="email" class="form-control input-underline input-lg"  placeholder="Enter email" name="email"  [(ngModel)]="user.emailId" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #email="ngModel"
+    [class.is-invalid]="email.invalid && email.touched">
+      <div *ngIf="email.errors && (email.invalid && email.touched)">
+        <small class="text-danger" *ngIf="email.errors.required ">Email không được để trống</small>
+        <small class="text-danger" *ngIf="email.errors.pattern">Emai không hợp lệ</small>
+      </div>
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control input-underline input-lg"  placeholder="Enter password" name="password" required [(ngModel)]="user.password" #password="ngModel"
+    [class.is-invalid]="password.invalid && password.touched">
+
+      <small class="text-danger"[class.d-none]="password.valid || password.untouched">Mật khẩu không được để trống</small>
+  </div>
 
   <div class="d-flex justify-content-around">
     <div class="mr-auto">
       <mdb-checkbox [default]="true">Nhớ mật khẩu</mdb-checkbox>
     </div>
-    <!-- <div>
-      <a href="">Forgot password?</a>
-    </div> -->
   </div>
 
-  <!-- Sign in button -->
-  <button mdbBtn color="info" block="true" class="my-4" type="submit">Đăng nhập</button>
+  <button mdbBtn color="info" block="true" class="my-4" [disabled]="loginForm.form.invalid" type="submit">Đăng nhập</button>
 
-  <!-- Register -->
   <p>Bạn chưa có tài khoản?
     <a href="/register">Đăng kí</a>
   </p>
-
-  <!-- Social login -->
-  <!-- <p>or sign in with:</p>
-
-  <a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="facebook"></mdb-icon>
-  </a>
-  <a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="twitter"></mdb-icon>
-  </a>
-  <a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="linkedin"></mdb-icon>
-  </a>
-  <a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="github"></mdb-icon>
-  </a> -->
 
 </form>

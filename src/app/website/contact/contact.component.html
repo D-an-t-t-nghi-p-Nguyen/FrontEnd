@@ -1,87 +1,37 @@
-<section class="hero-wrap" style="background-image: url('../../../assets/image/bg_1.jpg');height: 738px;">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-        <div class="col-md-9 ftco-animate pb-5 text-center">
-          <h1 class="mb-3 bread">About Us</h1>
-          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
-        </div>
-      </div>
-    </div>
-</section>
-
-<section class="services-section bg-light">
-  <div class="container d-flex ">
-    <div class="row mt-5 mb-5">
-      <div class="col-md-6 order-md-last heading-section pl-md-5">
-        <h2 class="mb-4">It's time to start your adventure</h2>
-        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-        A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-        <!-- <p><a href="#" class="btn btn-primary py-3 px-4">Search Destination</a></p> -->
-      </div>
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col-md-6 d-flex align-self-stretch">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-paragliding"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Activities</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 d-flex align-self-stretch">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-route"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Travel Arrangements</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-6 d-flex align-self-stretch">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-tour-guide"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Private Guide</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 d-flex align-self-stretch">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-map"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Location Manager</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary</p>
-              </div>
-            </div>      
-          </div>
-        </div>
+<div class="view">
+  <img src="../../../assets/img/vithe.jpg" class="img-fluid" alt="" width="100%">
+  <div class="mask flex-center rgba-blue-light">
+    <div class="text-white text-center py-5 px-4 my-5">
+      <div>
+        <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Chào mừng bạn ghé thăm</strong></h2>
+        <p class="mx-5 mb-5">Không chỉ là trang web du lịch, còn là trang web hỗ trợ cho bạn biết thêm về các địa danh nổi tiếng.
+        </p>
+        <!-- <a mdbBtn color="white" outline="true" class="waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="clone" class="left"></mdb-icon>View project
+        </a> -->
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="contact-section my-5">
+<section class="contact-section my-5 container">
     <div class="card">
       <div class="row">
         <div class="">
           <form (ngSubmit) = "onSubmit()">
             <div class="card-body form" >
-              <h3 class="mt-4"><mdb-icon fas icon="envelope" class="pr-2"></mdb-icon>Write to us:</h3>
+              <h3 class="mt-4"><mdb-icon fas icon="envelope" class="pr-2"></mdb-icon>Hộp thư:</h3>
               <div class="row">
                 <div class="col-md-6">
                   <div class="md-form mb-0">
                     <input type="text" id="form-contact-name" class="form-control" [(ngModel)]="talk.name" name="Name" required mdbInput>
-                    <label for="form-contact-name" class="">Your name</label>
+                    <label for="form-contact-name" class="">Tên của bạn</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="md-form mb-0">
                     <input type="text" id="form-contact-email" class="form-control" [(ngModel)]="talk.email" name="Email" required mdbInput>
-                    <label for="form-contact-email" class="">Your email</label>
+                    <label for="form-contact-email" class="">Email của bạn</label>
                   </div>
                 </div>
               </div>
@@ -89,7 +39,7 @@
                 <div class="col-md-12">
                   <div class="md-form mb-0">
                     <input type="text" id="form-contact-phone" class="form-control" [(ngModel)]="talk.number" name="Number" required mdbInput>
-                    <label for="form-contact-phone" class="">Your phone</label>
+                    <label for="form-contact-phone" class="">Số điện thoại của bạn</label>
                   </div>
                 </div>
               </div>
@@ -98,14 +48,14 @@
                   <div class="md-form mb-0">
                     <textarea type="text" id="form-contact-message" class="form-control md-textarea" rows="3"
                       mdbInput [(ngModel)]="talk.message" name="Message" required></textarea>
-                    <label for="form-contact-message">Your message</label>
+                    <label for="form-contact-message">Nội dung</label>
                   </div>
                 </div>
               </div>
             </div>
             <button type="submit" mdbBtn size="lg" color="blue" mdbWavesEffect>
               <mdb-icon far icon="paper-plane"></mdb-icon>
-              Send
+              Gửi
               <a href="http://localhost:4200/commenttravel"></a>
             </button>
           </form>
